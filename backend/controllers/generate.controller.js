@@ -1,7 +1,7 @@
-const { buildPrompt } = require("../utils/promptBuilder");
+const { buildPrompt } = require("../utils/promptBuilder.js");
 const {generateGeminiResponse} = require("../services/gemini.services.js")
 const User = require("../models/user.js");
-const ainotes = require("../models/ainotes");
+const ainotes = require("../models/ainotes.js");
 
 
 module.exports.generateNotes = async (req, res) => {

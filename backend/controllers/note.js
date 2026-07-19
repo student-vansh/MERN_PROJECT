@@ -1,5 +1,5 @@
 const Note = require("../models/note.js");
-const Download = require("../models/download");
+const Download = require("../models/download.js");
 // upload
 module.exports.uploadNote = async (req, res) => {
   try {
