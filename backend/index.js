@@ -20,7 +20,7 @@ connectDB();
 const cors = require("cors");
 
 app.use(cors({
-  origin: "https://mern-project-rho-kohl.vercel.app/", // React port
+  origin: "https://mern-project-rho-kohl.vercel.app", // React port
   credentials: true
 }));
 
