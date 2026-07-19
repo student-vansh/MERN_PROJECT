@@ -20,7 +20,7 @@ connectDB();
 const cors = require("cors");
 
 app.use(cors({
-  origin: "https://mern-project-rho-kohl.vercel.app", // React port
+  origin: "http://localhost:5173", // React port
   credentials: true
 }));
 
