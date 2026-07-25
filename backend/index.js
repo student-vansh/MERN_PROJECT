@@ -20,7 +20,7 @@ connectDB();
 const cors = require("cors");
 
 app.use(cors({
-  origin: "https://mern-project-lu59.onrender.com/home", // React port
+  origin: "https://mern-project-lu59.onrender.com", // React port
   credentials: true
 }));
 
