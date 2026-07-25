@@ -21,8 +21,10 @@ connectDB();
 
 
 app.use(cors({
-  origin: "https://mern-project-lu59.onrender.com", // React port
+  origin: "https://mern-project-frontend-7p74.onrender.com", // React port
   credentials: true,
+  // methods: ["GET", "POST", "PUT", "DELETE"],
+  // allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
