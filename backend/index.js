@@ -26,9 +26,9 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-app.get("/",(req,res)=>{
-    res.send("This is a new Project");
+
+app.get("/", (req, res) => {
+  res.send("This is a new Project");
 })
 
 
@@ -55,8 +55,8 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy({
-   usernameField:'email'
-},User.authenticate()));
+  usernameField: 'email'
+}, User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -71,11 +71,11 @@ app.use((req, res, next) => {
 app.get("/admin-test", isAdmin, (req, res) => {
   res.send("Admin access granted ✅");
 });
-app.use("/user",userRouter);
+app.use("/user", userRouter);
 app.use("/notes", notesRouter);
 app.use("/uploads", express.static("uploads"));
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Server is ready port No -> ${PORT}`);
+  console.log(`Server is ready port No -> ${PORT}`);
 })
