@@ -8,7 +8,7 @@ const {
   forgotPasswordLimiter,
   resendVerificationLimiter,
   requireAuth,
-} = require("../middleware");
+} = require("../middlewares");
 
 // ye signup ke liye hai
 router.post("/signup", UserController.signup);
