@@ -5,7 +5,7 @@ const { saveDownloadAndRedirect } = require("../controllers/note");
 const { uploadNote, getNotes, deleteNote } = require("../controllers/note");
 const { generateNotes } = require("../controllers/generate.controller");
 const { isAdmin } = require("../controllers/user");
-const { requireAuth } = require("../middleware");
+const { requireAuth } = require("../middlewares");
 
 // get notes (public)
 router.get("/", getNotes);
