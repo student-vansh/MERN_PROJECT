@@ -29,7 +29,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.options('*', cors());
 app.get("/", (req, res) => {
   res.send("This is a new Project");
 })
