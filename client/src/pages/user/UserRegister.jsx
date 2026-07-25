@@ -27,7 +27,7 @@ const UserRegister = () => {
     }
 
     try {
-      console.log(apiUrl("/user/signup"));
+      // console.log(apiUrl("/user/signup"));
       await axios.post(apiUrl("/user/signup"), formData, {
         withCredentials: true,
       });
