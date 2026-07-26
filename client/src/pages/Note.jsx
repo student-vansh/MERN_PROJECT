@@ -6,7 +6,7 @@ export default function Notes() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/notes")
+      .get("https://mern-project-backend-n8ox.onrender.com/notes")
       .then((res) => setNotes(res.data.notes))
       .catch((err) => console.log(err));
   }, []);
@@ -20,7 +20,7 @@ export default function Notes() {
           <h3>{note.title}</h3>
 
           <a
-            href={`http://localhost:8080/${note.fileUrl}`}
+            href={`https://mern-project-backend-n8ox.onrender.com/${note.fileUrl}`}
             target="_blank"
           >
             Download

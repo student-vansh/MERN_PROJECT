@@ -22,7 +22,7 @@ connectDB();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: "https://mern-project-frontend-ut3w.onrender.com",
   credentials: true,
 }));
 

@@ -3,7 +3,7 @@ const transporter = require("./sendEmail");
 const sendVerificationEmail = async (email, token) => {
 
     const verificationLink =
-        `http://localhost:5173/verify-email/${token}`;
+        `https://mern-project-frontend-ut3w.onrender.com/verify-email/${token}`;
 
     await transporter.sendMail({
 
