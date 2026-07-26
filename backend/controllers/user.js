@@ -10,7 +10,6 @@ const bcrypt = require("bcryptjs");
 module.exports.signup = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
-    console.log(req.body);
 
     const verificationToken = crypto.randomBytes(32).toString("hex");
     const newUser = new User({
@@ -19,7 +18,6 @@ module.exports.signup = async (req, res) => {
       role: role === "admin" ? "admin" : "user",
       verificationToken,
     });
-    console.log(newUser);
     const registeredUser = await User.register(newUser, password);
     await sendVerificationEmail(newUser.email, verificationToken);
 
@@ -429,8 +427,7 @@ module.exports.resendOtp = async (req, res) => {
 
 
 module.exports.getCurrentUser = (req, res) => {
-  console.log(req.user);
-  console.log(req.isAuthenticated());
+  // console.log(req.isAuthenticated());
 
   if (!req.isAuthenticated()) {
     return res.status(401).json({

@@ -1,6 +1,4 @@
 require("dotenv").config();
-const dns = require("dns");
-dns.setDefaultResultOrder("ipv4first");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -21,12 +19,11 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 connectDB();
 
+app.set("trust proxy", 1);
 
 app.use(cors({
-  origin: "https://mern-project-frontend-7p74.onrender.com", // React port
+  origin: process.env.CLIENT_URL,
   credentials: true,
-  // methods: ["GET", "POST", "PUT", "DELETE"],
-  // allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
@@ -49,6 +46,8 @@ const sessionOptions = {
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   },
 };
 
